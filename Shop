@@ -1,0 +1,35 @@
+class Customer:
+    def __init__(self, fullname: str, phone : str, age : int, email:str):
+        self.__fullname = fullname
+        self.__phone = phone
+        self.__age = age
+        self.__email = email
+    def __str__(self):
+        return f" Your profile : {self.__fullname}, {self.__phone}, {self.__age}, {self.__email}"
+
+class Item:
+    def __init__(self, price : float,  description : str, name : str , category):
+        self.__price = price
+        self.__description = description
+        self.__name = name
+        self.__category = category
+    def __str__(self):
+        return f"General Information about item : {self.__price}, {self.__description}, {self.__name}, {self.__category}"
+
+class Basket:
+    def __init__(self, whole_price : float):
+        self.__all_items = []
+        self.__whole_price = whole_price
+    def __str__(self):
+        return f"Total price: {self.__whole_price}. Items you ordered : {self.__all_items}"
+    def additem(self, item):
+        self.__all_items.append(item)
+    def removeitem(self, item):
+        self.__all_items.extend(item)
+
+
+customer1 = Customer("Shi Luntao", "iphoneXS", 14, "luntaosasa@gmail.com")
+item1 = Item(30000, "256gb, 120hz, pro camera", "Iphone 13pro", "Electronics")
+
+print(customer1)
+print(item1)
